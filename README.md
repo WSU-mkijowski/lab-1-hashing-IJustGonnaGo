@@ -51,21 +51,31 @@ Answer the following:
 hash)
 
 ```
-
+00009e6713a6cebb4b7e901cb0f5eafc948bf3cde9412321eb27c7e47510faf8  - 95other
 ```
 
 * How many words were in your dictionary?
+
+1,015
+
 * How many nonces did your code iterate over?
+
+100 (10 through 100)
+
 * What was the maximum number of hashes your code *could* compute given the above?
+
+101,500 (100 iterations times 1015 words)
+
 * What did you think about Task 2?
+
+It was good, it didn't take as long to complete as task 1 and I believe it does a good
+job on giving insight into cryptography and its relation to the blockchain.
+
 * Is there a better way than brute force to attempt to get higher valued coins?
+
+No
+
 * Why or why not?
 
-
-```bash
-please put any cool bash one-liners or other piped commands you
-learned/struggled with for task 2 here
-```
-
-### Notes
-
+The hashing process is supposed to be unpredictable and random when it comes to creating new hashes,
+so there's isn't any way of predicting the output of a hash.
