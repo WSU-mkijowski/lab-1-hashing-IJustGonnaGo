@@ -26,10 +26,13 @@ Answer the following in this file:
 * Instead of salts, if you were to use a nonce (unique number for each hashed
   field) how many possible combinations would I need to try?
 
+54,684
 
-  
 * Given the above, if this quiz data were *actual* class data, say for example
   your final exam, how would you store this dataset?  Why?
+
+I would store it using nonces instead as that would prevent all of someone's quiz answers from being breached and instead would only give you one attempted answer for each solved nonce and secret ID. Or at least it would take a lot longer for whatever sort of attack is being incorporated against the salted-data.csv file.
+
 
 ```bash
 all commands and comments are in the `code` file located in the root of this repository
