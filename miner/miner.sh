@@ -4,20 +4,19 @@
 echo "Starting The Miner..."
 
 ## Prints all words in provided dictionary
-## (you might want to find a bigger dictionary)
-for i in $(cat ../data/dictionary); do
+for i in $(cat ~/git/lab-1-hashing-IJustGonnaGo/data/dictionary); do
 
-  # iterates 100 times
+  # iterates to find 100 nonces for each word
   for k in $(seq 10 110); do
     
-    # sets the variable saltedRawWord to the salt prepended to the current dictionary word
-    saltedRawWord="$k$i"
+    # sets the variable noncedRawWord to the nonce prepended to the current dictionary word
+    noncedRawWord="$k$i"
 
-    # finds the hash of the saltedRawWord
-    hash=$(printf $saltedRawWord | sha256sum)
+    # finds the hash of the noncedRawWord
+    hash=$(printf $noncedRawWord | sha256sum)
 
-    # prints the hash plus the saltedRawWord
-    echo "$hash - $saltedRawWord"
+    # prints the hash plus the noncedRawWord
+    echo "$hash$noncedRawWord"
   done
 done
 
