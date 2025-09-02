@@ -6,17 +6,21 @@ file="data/quiz_data.csv"
 
 # following line will find the first column, print it sorted with only unique lines, interating through each one
 awk -F ',' '{print $1}' "$file" | sort -u | while read -r line; do
+   
+   #checker to see how many salts were created
+   totalSalts+=1
 
    #this variable is the salt before the raw data, before sha256sum
    saltedRawLine="$salt$line"
 
-   #finds the hash of the salt + secred id and then prints it using echo
+   #finds the hash of the salt prepended to secret id
    hash=$(printf $saltedRawLine | sha256sum | awk '{print $1}')
-   echo "$salt $line $hash"
+   echo "$line $salt$hash"
+   
+   #this sed command should replace every instance of the secret id with the salt prepended
+   #to the hash
+   #sed -i "s/$line/$salt$hash/g" salted-data.csv
 
    #then increment the salt to have unique salt for each instance of secret id
    salt+=1
-
-   #next thing that needs done is adding sed command that replaces the 
-   #instances of secret id with hash with salt prepended to it
 done
