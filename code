@@ -19,7 +19,7 @@ awk -F ',' '{print $1}' "$file" | sort -u | while read -r line; do
    
    #this sed command should replace every instance of the secret id with the salt prepended
    #to the hash
-   #sed -i "s/$line/$salt$hash/g" salted-data.csv
+   sed -i "s/$line/$salt$hash/g" salted-data.csv
 
    #then increment the salt to have unique salt for each instance of secret id
    salt+=1
