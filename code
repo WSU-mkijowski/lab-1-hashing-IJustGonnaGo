@@ -6,9 +6,6 @@ file="data/quiz_data.csv"
 
 # following line will find the first column, print it sorted with only unique lines, interating through each one
 awk -F ',' '{print $1}' "$file" | sort -u | while read -r line; do
-   
-   #checker to see how many salts were created
-   totalSalts+=1
 
    #this variable is the salt before the raw data, before sha256sum
    saltedRawLine="$salt$line"
