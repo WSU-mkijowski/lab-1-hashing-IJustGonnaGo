@@ -60,7 +60,7 @@ hash)
 
 * How many nonces did your code iterate over?
 
-100 (10 through 100)
+100 (10 through 110)
 
 * What was the maximum number of hashes your code *could* compute given the above?
 
